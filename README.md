@@ -69,17 +69,19 @@ Built with **PHP, MySQL**, and deployed using **AWS infrastructure** to ensure s
                                  | Upload to   |
                                  |   S3 Bucket |
                                  +-------------+
-
+```
+---
 
  ## 🔐 Secure Configuration
-Uses vlucas/phpdotenv to manage environment variables (.env file)
+-Uses vlucas/phpdotenv to manage environment variables (.env file)
 
-AWS Secrets Manager is integrated for secure, production-grade credential management
+-AWS Secrets Manager is integrated for secure, production-grade credential management
 
-No hardcoded sensitive data in the source code
+-No hardcoded sensitive data in the source code
 
+---
 
-📄 Resume Download Workflow
+## 📄 Resume Download Workflow
 User submits roll number via form
 
 Application fetches user data from AWS RDS
@@ -93,9 +95,7 @@ PDF is:
 Streamed to the browser for immediate download
 
 Optionally uploaded to Amazon S3 for backup or reuse
-
-
-
+---
 # Clone the repository
 git clone https://github.com/yourusername/resume-builder.git
 cd resume-builder
@@ -110,9 +110,3 @@ cp .env.example .env
 # Run the application locally
 php -S localhost:8000
 
-
-
-
-You can paste this content directly into your `README.md` file at the root of your project directory.
-
-Let me know if you’d like to include a [project demo GIF](f), a [deployment script](f), or [badge integration](f) for GitHub!
