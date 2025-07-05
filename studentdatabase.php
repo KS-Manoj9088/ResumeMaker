@@ -1,7 +1,19 @@
 <?PHP
+	require_once 'vendor/autoload.php';
+
+	$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+	$dotenv->load();
+
+	$link = mysqli_connect(
+   	 $_ENV['DB_HOST'],
+   	 $_ENV['DB_USER'],
+   	 $_ENV['DB_PASS'],
+   	 $_ENV['DB_NAME']
+	);
+
 	$usn= $fullname= $mobile= $email= $website= $linkedin= $github= $hno= $street= $city= $state= $country= $pin= $careerobjective= $sem1= $sem1total= $sem2= $sem2total= $sem3= $sem3total= $sem4= $sem4total= $sem5= $sem5total= $sem6= $sem6total= $sem7= $sem7total= $sem8= $sem8total= $betotal= $n= $becollege= $beuniversity= $beyear= $sslc = $sslctotal = $pumarks = $putotal =  $preuniversitymarks= $pucollege= $puuniversity= $puyear= $sslcmarks= $school= $schoolboard= $sslcyear= $project1= $project1abstract= $project2= $project2abstract= $project3= $project3abstract= $project4= $project4abstract= $publication1= $publication2= $publication3= $publication4= $programming= $web= $tools= $os= $extra1= $extra2= $extra3= $extra4= $extra5= $hobby1= $hobby2= $hobby3= $hobby4= $hobby5= $fathersname= $mothersname= $gender= $dd= $mm= $yyyy= $nationality= $maritalstatus= $languagesknown= $declaration= "";
 	
-	$link=mysqli_connect("resume.cory55iehygb.us-east-1.rds.amazonaws.com","admin","ManojKumar2","resume");
+	//$link=mysqli_connect("resume.cory55iehygb.us-east-1.rds.amazonaws.com","admin","ManojKumar2","resume");
 
 	$roll= $_POST["roll"];
 	$fullname= $_POST["fullname"];
