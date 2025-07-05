@@ -70,43 +70,41 @@ Built with **PHP, MySQL**, and deployed using **AWS infrastructure** to ensure s
                                  |   S3 Bucket |
                                  +-------------+
 ```
----
-
- ## 🔐 Secure Configuration
--Uses vlucas/phpdotenv to manage environment variables (.env file)
-
--AWS Secrets Manager is integrated for secure, production-grade credential management
-
--No hardcoded sensitive data in the source code
 
 ---
 
-## 📄 Resume Download Workflow
-User submits roll number via form
+## 🔐 Secure Configuration
 
-Application fetches user data from AWS RDS
+- All environment-sensitive values (DB host, username, password, etc.) are loaded from a `.env` file using [`vlucas/phpdotenv`](https://github.com/vlucas/phpdotenv)
+- AWS Secrets Manager is optionally used to fetch credentials dynamically for production deployments
 
-HTML resume is generated dynamically
-
-PDF is generated using Dompdf
-
-PDF is:
-
-Streamed to the browser for immediate download
-
-Optionally uploaded to Amazon S3 for backup or reuse
 ---
-# Clone the repository
+
+## 📄 Resume Download Flow
+
+1. User submits roll number
+2. Resume is dynamically rendered using HTML + data from RDS
+3. Dompdf converts the HTML to PDF
+4. PDF is:
+   - Streamed to the browser for download
+   - Optionally uploaded to S3 for future reference
+
+---
+
+## 🧪 Local Setup
+
+```bash
+# Clone the repo
 git clone https://github.com/yourusername/resume-builder.git
+
 cd resume-builder
 
-# Install PHP dependencies
+# Install dependencies
 composer install
 
-# Copy .env template and configure
+# Create .env file
 cp .env.example .env
-# Edit .env to add your DB credentials
+# Add your DB credentials
 
-# Run the application locally
+# Start local server (if using built-in PHP server)
 php -S localhost:8000
-
